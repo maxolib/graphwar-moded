@@ -63,7 +63,7 @@ public class Graphwar extends JFrame
 	
 	public void init()
 	{		
-		setTitle("Graphwar");
+		setTitle("Graphwar - Moded v1.0.0");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setPreferredSize(new Dimension(Constants.WIDTH,Constants.HEIGHT));
         pack();

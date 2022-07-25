@@ -276,10 +276,21 @@ public class GraphPlane extends JPanel implements ActionListener
 			g.drawImage(graphwar.getGameData().getObstacle().getImage(), 0, 0, null);
 		}
 		
+		// Grid mod
 		g.setColor(Color.BLACK);
-		
-		g.drawLine(0, Constants.PLANE_HEIGHT/2, Constants.PLANE_LENGTH, Constants.PLANE_HEIGHT/2);
-		g.drawLine(Constants.PLANE_LENGTH/2, 0, Constants.PLANE_LENGTH/2, Constants.PLANE_HEIGHT);
+
+		for (int i = 0; i < 30; i++) {
+			if(i%5 != 0) continue;
+			g.drawLine(0, (int)(Constants.PLANE_HEIGHT * (i/30f)), Constants.PLANE_LENGTH, (int)(Constants.PLANE_HEIGHT * (i/30f)));
+		}
+
+		for (int i = 0; i < 50; i++) {
+			if(i%5 != 0) continue;
+			g.drawLine((int)(Constants.PLANE_LENGTH * (i/50f)), 0, (int)(Constants.PLANE_LENGTH * (i/50f)), Constants.PLANE_HEIGHT);
+		}
+		// Bold line
+		g.drawLine(0, (int)(Constants.PLANE_HEIGHT/2 + 1), Constants.PLANE_LENGTH, (int)(Constants.PLANE_HEIGHT/2 +1));
+		g.drawLine((int)(Constants.PLANE_LENGTH/2 + 1), 0, (int)(Constants.PLANE_LENGTH/2 + 1), Constants.PLANE_HEIGHT);
 	}
 	
 	public void startDrawingFunction()
